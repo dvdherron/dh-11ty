@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.title }}</title>
+    <meta name="description" content="{{ data.description }}">
+    {# <!-- capture the CSS content as a Nunjucks variable --> #}
+    {% set css %}{% include "main.css" %}{% endset %}
+
+    {# <!-- feed it through a cssmin filter to minify --> #}
+    <style>
+      {{css | cssmin | safe}}
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <h1>{{ mainTitle | safe }}</h1>
+      <p>{{ subtitle | safe }}</p>
+    </header>
+    <main role="main">
+      <section>
+        <p>{{ intro }}
+        </p>
+        {{ content | safe }}
+      </section>
+
+      {% set sections = collections.sections %}
+      <h2>
+        {{ sections[0].data.hed }}
+      </h2>
+      <p>
+        {{sections[0].data.content | safe }}
+      </p>
+
+      {# {%- for section in sections -%}
+        {% include "_section.njk" %}
+      {%- endfor -%} #}
+    </main>
+  </body>
+  {% include "_foot.njk" %}
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "dh-work",
+  "version": "1.0.0",
+  "description": "The online playground of David A. Herron.",
+  "scripts": {
+    "build": "npx eleventy && eleventy --watch",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "keywords": [],
+  "author": {
+    "name": "David A. Herron",
+    "url": "https://david-herron.com/",
+    "email": "dvdherron@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  },
+  "dependencies": {
+    "clean-css": "^4.2.3"
+  }
+}
