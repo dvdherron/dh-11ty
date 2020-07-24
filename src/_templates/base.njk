@@ -26,13 +26,17 @@
         {{ content | safe }}
       </section>
 
-      {% set sections = collections.sections %}
+      {# logic for adding a single section on index page #}
+
+      {# {% set sections = collections.sections %}
       <h2>
         {{ sections[0].data.hed }}
       </h2>
       <p>
         {{sections[0].data.content | safe }}
-      </p>
+      </p> #}
+
+      {# logic for adding multiple sections on index page #}
 
       {# {%- for section in sections -%}
         {% include "_section.njk" %}
