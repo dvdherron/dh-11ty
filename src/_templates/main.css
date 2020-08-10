@@ -157,12 +157,15 @@ section {
 }
 
 [data-layout="body"] {
-  margin: 5%;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  height: auto;
 }
 
 [data-layout="banner"] {
   display: grid;
-  grid-template-columns: repeat(6, 4rem);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 4rem);
 }
 
