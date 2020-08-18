@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-mainTitle: david a. herron
-subtitle: web designer + developer
+mainTitle: david&nbsp;a.<br> herron
+subtitle: web&nbsp;designer +<br> developer
 intro: Hi, I’m David, a web designer and developer based in Stockholm.
 ---
 

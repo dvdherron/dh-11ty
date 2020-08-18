@@ -14,10 +14,15 @@
     </style>
 
   </head>
-  <body>
-    <header>
-      <h1>{{ mainTitle | safe }}</h1>
-      <p>{{ subtitle | safe }}</p>
+  <body data-layout="body">
+    <header id="banner" data-layout="banner">
+      <p class="subtitle">{{ subtitle | safe }}</p>
+      <h1 class="headline">{{ mainTitle | safe }}</h1>
+      <b></b>
+      <b></b>
+      <b></b>
+      <b></b>
+      <b></b>
     </header>
     <main role="main">
       <section>
