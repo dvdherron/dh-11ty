@@ -155,6 +155,8 @@ section {
   --font-display: Arial, Helvetica, sans-serif;
   --font-body: Georgia, "Times New Roman", Times, serif;
   --gutter-space: 1rem;
+  --barheight-narrow: 125px;
+  --barheight-wide: 18vw;
 }
 
 [data-layout="body"] {
@@ -166,12 +168,12 @@ section {
 }
 
 [data-layout="banner"] {
-  margin: 6rem auto 3rem;
+  margin: 2rem auto;
   column-gap: 0.25rem;
   row-gap: 1rem;
   display: grid;
   grid-template-columns:
-    1fr minmax(5vw, auto) repeat(5, minmax(2vw, max-content))
+    1fr minmax(5vw, auto) repeat(5, minmax(2vw, min-content))
     1fr;
   grid-auto-rows: min-content;
 }
@@ -180,7 +182,7 @@ b {
   background-color: black;
   width: 10vw;
   display: inline-block;
-  height: 125px;
+  height: var(--barheight-narrow, 125px);
 }
 
 b:nth-of-type(1) {
@@ -228,7 +230,7 @@ b:nth-of-type(5) {
   margin: 0 0 1rem;
   font-synthesis: none;
   font-weight: bold;
-  font-size: clamp(1em, calc(8vw + 1.25vw), 4rem);
+  font-size: clamp(2.25rem, calc(10vw + 1.25vw), 5.5rem);
   line-height: 0.9;
 }
 
@@ -239,4 +241,14 @@ body p {
 
 main {
   padding: 0 2%;
+}
+
+@media screen and (min-width: 60em) {
+  b {
+    height: var(--barheight-wide);
+  }
+
+  b:nth-child(even) {
+    height: calc(var(--barheight-wide) + 3vw);
+  }
 }
