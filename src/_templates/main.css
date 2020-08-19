@@ -1,4 +1,4 @@
-/* Global Remedies
+/* Global Remedies / Resets
 ******************/
 
 /* Use border-box by default, globally */
@@ -151,6 +151,9 @@ section {
 /* End of CSS remedies/reset
 ******************/
 
+/* Page Layout
+******************/
+
 :root {
   --font-display: Arial, Helvetica, sans-serif;
   --font-body: Georgia, "Times New Roman", Times, serif;
@@ -169,6 +172,7 @@ section {
 [data-layout="wrapper--main"] {
   padding: 5%;
   margin: 0 auto;
+  max-width: 85em;
 }
 
 [data-layout="banner"] {
@@ -237,9 +241,35 @@ b:nth-of-type(5) {
   line-height: 0.9;
 }
 
-body p {
+.intro {
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-weight: 100;
+  font-size: clamp(1.5rem, 2.5rem + 1vw, 8vw);
+  position: relative;
+  padding: 0;
+}
+
+/* .intro:after {
+  content: "";
+  background-color: #000;
+  width: 5em;
+  height: 0.25rem;
+  margin: 1rem auto 4rem;
+  display: block;
+} */
+
+main p {
   font-size: 1.3rem;
   font-family: var(--font-body);
+}
+
+@media screen and (min-width: 450px) {
+  main p {
+    padding: 0 5%;
+    max-width: 40em;
+    margin: 2rem auto;
+  }
 }
 
 @media screen and (min-width: 50em) {
@@ -249,5 +279,11 @@ body p {
 
   b:nth-child(even) {
     height: calc(var(--barheight-wide) + 3vw);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .intro {
+    padding: 0 3em;
   }
 }
