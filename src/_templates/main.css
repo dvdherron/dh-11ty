@@ -165,6 +165,7 @@ section {
   min-height: 100vh;
   height: auto;
   padding: 2.5%;
+  position: relative;
 }
 
 [data-layout="banner"] {
@@ -239,8 +240,12 @@ body p {
   font-family: var(--font-body);
 }
 
-main {
+[data-layout="main"] {
   padding: 0 2%;
+}
+
+[data-layout="main"] .intro {
+  font-family: var(--font-display);
 }
 
 @media screen and (min-width: 60em) {
