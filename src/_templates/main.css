@@ -172,7 +172,7 @@ section {
 [data-layout="wrapper--main"] {
   padding: 5%;
   margin: 0 auto;
-  max-width: 85em;
+  max-width: 80em;
 }
 
 [data-layout="banner"] {
@@ -234,7 +234,7 @@ b:nth-of-type(5) {
   font-family: var(--font-display);
   /* text-align: right; */
   /* width: 7ch; */
-  margin: 0 0 1rem;
+  margin: 0 0 2.25rem;
   font-synthesis: none;
   font-weight: bold;
   font-size: clamp(2.25rem, calc(10vw + 1.25vw), 5.5rem);
@@ -242,7 +242,7 @@ b:nth-of-type(5) {
 }
 
 .intro {
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   font-family: var(--font-display);
   font-weight: 100;
   font-size: clamp(1.5rem, 2.5rem + 1vw, 8vw);
@@ -260,7 +260,7 @@ b:nth-of-type(5) {
 } */
 
 main p {
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-family: var(--font-body);
 }
 
@@ -283,7 +283,7 @@ main p {
 }
 
 @media screen and (min-width: 1200px) {
-  .intro {
+  /* .intro {
     padding: 0 3em;
-  }
+  } */
 }

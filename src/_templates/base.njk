@@ -26,10 +26,11 @@
         <b></b>
       </header>
       <main role="main">
-        <section>
-          <p class="intro">{{ intro }}
-          </p>
-          {{ content | safe }}
+        <section data-layout="intro">
+          <p class="intro">{{ intro }}</p>
+          <div>
+            {{ content | safe }}
+          </div>
         </section>
 
         {# logic for adding a single section on index page #}
