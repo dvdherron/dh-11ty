@@ -290,11 +290,11 @@ main p {
 
 @media screen and (min-width: 1000px) {
   [data-layout="banner"] {
-  margin: 0 auto 4rem;
+    margin: 0 auto 4rem;
+  }
 }
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   /* .intro {
     padding: 0 3em;
   } */
-}
