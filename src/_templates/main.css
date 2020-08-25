@@ -228,6 +228,7 @@ b:nth-of-type(5) {
 }
 
 .headline {
+  text-transform: lowercase;
   grid-column: 1/-1;
   grid-row: 2/ 4;
   /* justify-self: end; */
