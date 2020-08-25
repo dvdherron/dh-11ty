@@ -1,2 +1,2 @@
-# dh-11ty
-the online playground for David A. Herron
+# david-herron.com
+my online playground for code and whatnot: https://www.david-herron.com/
