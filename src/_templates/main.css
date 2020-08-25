@@ -170,7 +170,7 @@ section {
 }
 
 [data-layout="wrapper--main"] {
-  padding: 5%;
+  padding: 5% 5% 0;
   margin: 0 auto;
   max-width: 80em;
 }
@@ -263,6 +263,23 @@ b:nth-of-type(5) {
 main p {
   font-size: 1.2em;
   font-family: var(--font-body);
+}
+
+[data-layout="footer"]:before {
+  content: "";
+  background-color: hsla(0, 0%, 61%, 0.562);
+  height: 0.12rem;
+  display: block;
+}
+
+[data-layout="footer"] {
+  margin: 6rem auto 2rem;
+  font-family: var(--font-body);
+  font-size: 1em;
+}
+
+[data-layout="footer"] p {
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 450px) {
