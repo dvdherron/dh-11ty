@@ -1,3 +1,35 @@
+/* Inter Static Fonts */
+
+/* Standard Extra Light, Bold */
+
+@font-face {
+  font-family: "Inter Extra Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("_assets/fonts/Inter-ExtraLight.woff2") format("woff2"),
+    url("_assets/fonts/Inter-ExtraLight.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("_assets/fonts/Inter-Bold.woff2") format("woff2"),
+    url("_assets/fonts/Inter-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+/* Inter Variable Font */
+@font-face {
+  font-family: "Inter Var";
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  src: url("_assets/fonts/Inter.var.woff2") format("woff2 supports variations"),
+    url("_assets/fonts/Inter.var.woff2") format("woff2-variations");
+  font-display: swap;
+}
+
 /* Global Remedies / Resets
 ******************/
 
@@ -155,8 +187,10 @@ section {
 ******************/
 
 :root {
-  --font-display: Arial, Helvetica, sans-serif;
-  --font-body: Georgia, "Times New Roman", Times, serif;
+  --fonts-base-serif: Georgia, "Times New Roman", Times, serif;
+  --fonts-base-sans: Arial, Helvetica, sans-serif;
+  /* --fonts-serif: Variable, Georgia, Times New Roman, Times, serif; */
+  --fonts-sans-display: "Inter Var", Helvetica, Arial, sans-serif;
   --gutter-space: 1rem;
   --barheight-narrow: 125px;
   --barheight-wide: 18vw;
@@ -167,6 +201,7 @@ section {
   min-width: 100%;
   min-height: 100vh;
   height: auto;
+  font-family: var(--fonts-base-serif);
 }
 
 [data-layout="wrapper--main"] {
@@ -220,21 +255,27 @@ b:nth-of-type(5) {
 }
 
 [data-layout="banner"] .subtitle {
-  font-family: var(--font-display);
+  font-family: "Inter Extra Light",
+    var(--fonts-base-sans, Arial, Helvetica, sans-serif);
   grid-column: 1 / -2;
   grid-row: 1;
   font-size: clamp(0.85rem, calc(1rem + 1vw), 4rem);
   margin: 0;
 }
 
+@supports (font-variation-settings: normal) {
+  [data-layout="banner"] .subtitle {
+    font-family: var(--fonts-sans-display);
+    font-weight: 279;
+  }
+}
+
 .headline {
   text-transform: lowercase;
   grid-column: 1/-1;
   grid-row: 2/ 4;
-  /* justify-self: end; */
-  font-family: var(--font-display);
-  /* text-align: right; */
-  /* width: 7ch; */
+  font-family: "Inter Bold",
+    var(--fonts-base-sans, Arial, Helvetica, sans-serif);
   margin: 0 0 2.25rem;
   font-synthesis: none;
   font-weight: bold;
@@ -242,27 +283,31 @@ b:nth-of-type(5) {
   line-height: 0.9;
 }
 
+@supports (font-variation-settings: normal) {
+  .headline {
+    font-family: var(--fonts-sans-display);
+    font-weight: 796;
+  }
+}
+
 .intro {
   margin: 0 auto 2rem;
-  font-family: var(--font-display);
+  font-family: "Inter Extra Light";
   font-weight: 100;
-  font-size: clamp(1.5rem, 2.5rem + 1vw, 8vw);
+  font-size: calc(1.5rem + 1.75vw);
   position: relative;
   padding: 0;
 }
 
-/* .intro:after {
-  content: "";
-  background-color: #000;
-  width: 5em;
-  height: 0.25rem;
-  margin: 1rem auto 4rem;
-  display: block;
-} */
+@supports (font-variation-settings: normal) {
+  .intro {
+    font-family: var(--fonts-sans-display);
+    font-weight: 230;
+  }
+}
 
 main p {
   font-size: 1.2em;
-  font-family: var(--font-body);
 }
 
 [data-layout="footer"]:before {
@@ -274,7 +319,7 @@ main p {
 
 [data-layout="footer"] {
   margin: 6rem auto 2rem;
-  font-family: var(--font-body);
+  font-family: var(--fonts-base-serif);
   font-size: 1em;
 }
 
