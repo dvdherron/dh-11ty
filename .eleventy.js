@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/_assets");
 
   eleventyConfig.addCollection("sections", function (collection) {
     return collection.getFilteredByGlob("./src/sections/*.md");
