@@ -294,7 +294,7 @@ b:nth-of-type(5) {
   margin: 0 auto 2rem;
   font-family: "Inter Extra Light";
   font-weight: 100;
-  font-size: calc(1.5rem + 1.75vw);
+  font-size: 7.6vw;
   position: relative;
   padding: 0;
 }
@@ -305,6 +305,7 @@ b:nth-of-type(5) {
     font-weight: 230;
   }
 }
+/* media query for font-size at wider screen*/
 
 main p {
   font-size: 1.2em;
