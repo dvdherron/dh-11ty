@@ -202,6 +202,7 @@ section {
   min-height: 100vh;
   height: auto;
   font-family: var(--fonts-base-serif);
+  line-height: 1.3;
 }
 
 [data-layout="wrapper--main"] {
@@ -294,9 +295,10 @@ b:nth-of-type(5) {
   margin: 0 auto 2rem;
   font-family: "Inter Extra Light";
   font-weight: 100;
-  font-size: calc(1.5rem + 1.75vw);
+  font-size: 7.6vw;
   position: relative;
   padding: 0;
+  line-height: 1.1;
 }
 
 @supports (font-variation-settings: normal) {
@@ -306,8 +308,20 @@ b:nth-of-type(5) {
   }
 }
 
+@media screen and (min-width: 464px) {
+  .intro {
+    font-size: calc(1.6em + 1.5vw);
+  }
+}
+
 main p {
-  font-size: 1.2em;
+  font-size: 5.34vw;
+}
+
+@media screen and (min-width: 464px) {
+  main p {
+    font-size: calc(1.2em + 0.5vw);
+  }
 }
 
 [data-layout="footer"]:before {
@@ -376,10 +390,6 @@ main p {
 }
 
 @media screen and (min-width: 50em) {
-  /* b {
-    height: var(--barheight-wide);
-  } */
-
   b:nth-child(even) {
     height: calc(var(--barheight-wide) + 3vw);
   }
@@ -390,8 +400,3 @@ main p {
     margin: 0 auto 4rem;
   }
 }
-
-/* @media screen and (min-width: 1200px) {
-  /* .intro {
-    padding: 0 3em;
-  } */
