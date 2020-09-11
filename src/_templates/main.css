@@ -208,6 +208,7 @@ section {
 a {
   color: inherit;
   text-decoration: underline;
+  text-underline-offset: 3px;
   padding: 0;
 }
 
