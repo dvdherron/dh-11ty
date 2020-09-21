@@ -1,0 +1,5 @@
+<div>
+  {% for item in collections.work %}
+    {{ macros.project(item.data.title, item.data.description, item.data.test) }}
+  {%- endfor -%}
+</div>

@@ -120,7 +120,6 @@ iframe,
 embed,
 object {
   display: block;
-  vertical-align: middle;
   max-width: 100%;
 }
 
