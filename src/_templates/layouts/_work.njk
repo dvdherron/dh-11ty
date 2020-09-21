@@ -1,5 +1,14 @@
-<div>
+<section>
+  <h2>Selected Work</h2>
   {% for item in collections.work %}
-    {{ macros.project(item.data.title, item.data.description, item.data.test) }}
+    {{ macros.project(
+      item.data.name, 
+      item.data.description,
+      item.data.img, 
+      item.data.width, 
+      item.data.height, 
+      item.data.alt, 
+      item.data.link
+      )}}
   {%- endfor -%}
-</div>
+</section>

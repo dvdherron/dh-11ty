@@ -1,11 +1,16 @@
-{% macro project(name, description, test) %}
+{% macro project(name, description, img, width, height, alt, link) %}
   <h3>
-    {{ name }}</h3>
+    {{ name | safe }}</h3>
+  {% if img %}
+    <img src="/_assets/images/{{ img }}" height="{{ height }}" width="{{ width }}" alt="{{ alt }}">
+  {% endif %}
   <p>
-    {{ description }}
+    {{ description | safe }}
   </p>
-
-  <small>
-    {{ test }}</small>
+  {% if link %}
+    <p>
+      <a href="{{ link }}"> View project </a>
+    </p>
+  {% endif %}
 
 {% endmacro %}
