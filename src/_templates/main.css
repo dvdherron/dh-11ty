@@ -216,7 +216,7 @@ a:hover {
 }
 
 a:focus {
-  outline: 3px solid;
+  outline: 3px dotted;
   text-decoration: none;
 }
 
