@@ -77,6 +77,22 @@ h6 {
   font-size: 0.67rem;
 }
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 /* Keep h1 margins consistent, even when nested */
 h1 {
   margin: 0.67em 0;
@@ -343,6 +359,39 @@ main p {
   }
 }
 
+/**
+ * FLOW
+ *
+ * A tiny utility that helps with rhythm by adding margin to siblings
+ *
+ * --flow-space: The amount of space between siblings: Default 1em;
+ */
+.flow {
+  --flow-space: 1em;
+}
+
+.flow > * + * {
+  margin-top: 1em;
+  margin-top: var(--flow-space);
+}
+
+h2 {
+  --flow-space: 3em;
+}
+
+h3 {
+  --flow-space: 2em;
+}
+
+/**
+ * Work section
+ *
+ *
+ */
+
+[data-section="work"] {
+}
+
 [data-layout="footer"]:before {
   content: "";
   background-color: hsla(0, 0%, 61%, 0.562);
@@ -364,7 +413,7 @@ main p {
   main p {
     padding: 0 5%;
     max-width: 40em;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
   }
 }
 
