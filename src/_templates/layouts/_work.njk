@@ -1,0 +1,18 @@
+<section data-section="work" class="flow">
+
+  <h2 class="section-title">Selected Work</h2>
+  {% for item in collections.work %}
+    <div class="flow" data-layout="work-wrapper">
+      {{ macros.project(
+      item.data.name, 
+      item.data.description,
+      item.data.src,
+      item.data.img, 
+      item.data.width, 
+      item.data.height, 
+      item.data.alt, 
+      item.data.link
+      )}}
+    </div>
+  {%- endfor -%}
+</section>

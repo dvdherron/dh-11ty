@@ -1,3 +1,5 @@
+{% import "macros.njk" as macros with context %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,14 +27,14 @@
         <b></b>
         <b></b>
       </header>
-      <main role="main">
-        <section data-layout="intro">
-          <p class="intro">{{ intro }}</p>
-          <div>
-            {{ content | safe }}
-          </div>
+      <main class="flow" role="main">
+        <section class="flow" data-layout="intro">
+          <h2 class="intro">{{ intro | safe }}</h2>
+          <p>
+            {{ layoutContent | safe }}
+          </p>
         </section>
-
+        {% include "layouts/_work.njk" %}
         {# logic for adding a single section on index page #}
 
         {# {% set sections = collections.sections %}
@@ -45,9 +47,9 @@
 
         {# logic for adding multiple sections on index page #}
 
-        {# {%- for section in sections -%}
-        {% include "_section.njk" %}
-      {%- endfor -%} #}
+        {# {%- for section in collections.sections -%}
+          {% include "_section.njk" %}
+        {%- endfor -%} #}
       </main>
       {% include "_foot.njk" %}
     </div>

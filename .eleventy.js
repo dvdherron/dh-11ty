@@ -10,6 +10,10 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob("./src/sections/*.md");
   });
 
+  eleventyConfig.addCollection("work", function (collection) {
+    return collection.getFilteredByGlob("./src/sections/work/*.md");
+  });
+
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });

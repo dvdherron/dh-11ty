@@ -77,6 +77,22 @@ h6 {
   font-size: 0.67rem;
 }
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 /* Keep h1 margins consistent, even when nested */
 h1 {
   margin: 0.67em 0;
@@ -120,7 +136,6 @@ iframe,
 embed,
 object {
   display: block;
-  vertical-align: middle;
   max-width: 100%;
 }
 
@@ -166,6 +181,7 @@ header,
 hgroup,
 main,
 nav,
+picture,
 section {
   display: block;
 }
@@ -189,11 +205,15 @@ section {
 :root {
   --fonts-base-serif: Georgia, "Times New Roman", Times, serif;
   --fonts-base-sans: Arial, Helvetica, sans-serif;
-  /* --fonts-serif: Variable, Georgia, Times New Roman, Times, serif; */
   --fonts-sans-display: "Inter Var", Helvetica, Arial, sans-serif;
   --gutter-space: 1rem;
   --barheight-narrow: 125px;
   --barheight-wide: 18vw;
+  font-size: 16px;
+  --main-color: #000000;
+  --reverse-color: #ffffff;
+  --space-large: 8rem;
+  --space-med: 2rem;
 }
 
 [data-layout="body"] {
@@ -209,20 +229,23 @@ a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-thickness: 0.1em;
   padding: 0;
 }
 
 a:hover {
-  text-decoration: none;
+  text-decoration-thickness: 0.05em;
+
+  transition: text-decoration-thickness 110ms ease-out;
 }
 
 a:focus {
-  outline: 3px solid;
-  text-decoration: none;
+  outline: 3px dotted;
+  /* text-decoration: none; */
 }
 
 a:visited {
-  color: #0f0281;
+  color: currentColor;
 }
 
 [data-layout="wrapper--main"] {
@@ -241,7 +264,7 @@ a:visited {
 }
 
 b {
-  background-color: black;
+  background-color: var(--main-color);
   width: 15vw;
   display: inline-block;
   height: var(--barheight-narrow, 125px);
@@ -312,11 +335,10 @@ b:nth-of-type(5) {
 }
 
 .intro {
-  margin: 0 auto 2rem;
+  /* margin: 0 auto 2rem; */
   font-family: "Inter Extra Light";
   font-weight: 100;
   font-size: 7.6vw;
-  position: relative;
   padding: 0;
   line-height: 1.1;
 }
@@ -344,6 +366,78 @@ main p {
   }
 }
 
+/**
+ * FLOW
+ *
+ * A tiny utility that helps with rhythm by adding margin to siblings
+ *
+ * --flow-space: The amount of space between siblings: Default 1em;
+ */
+.flow {
+  --flow-space: 1em;
+}
+
+.flow > * + * {
+  margin-top: 1em;
+  margin-top: var(--flow-space);
+}
+
+/**
+ * Work section
+ *
+ *
+ */
+
+.section-title {
+  --flow-space: 3rem;
+  font-family: var(--fonts-sans-display);
+  color: var(--reverse-color);
+  background: var(--main-color);
+  padding: 0.5em;
+  display: inline-block;
+}
+
+[data-section="work"] {
+  --flow-space: var(--space-large);
+}
+
+[data-layout="work-title"] {
+  font-family: "Inter Bold",
+    var(--fonts-base-sans, Arial, Helvetica, sans-serif);
+  padding-top: var(--space-med);
+  padding-block-start: var(--space-med);
+  display: inline-block;
+  font-size: 7vw;
+}
+
+@supports (font-variation-settings: normal) {
+  [data-layout="work-title"] {
+    font-family: var(--fonts-sans-display);
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 464px) {
+  [data-layout="work-title"] {
+    font-size: clamp(1.5em, calc(1rem + 1vw), 2.1em);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  [data-layout="work-item"] {
+    display: flex;
+  }
+  [data-layout="work-item"] p {
+    margin-top: 0;
+  }
+  [data-layout="work-item"] picture {
+    flex: 0 0 40%;
+  }
+  [data-layout="work-item"] img {
+    object-fit: contain;
+  }
+}
+
 [data-layout="footer"]:before {
   content: "";
   background-color: hsla(0, 0%, 61%, 0.562);
@@ -365,7 +459,7 @@ main p {
   main p {
     padding: 0 5%;
     max-width: 40em;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
   }
 }
 
