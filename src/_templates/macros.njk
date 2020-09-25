@@ -8,7 +8,7 @@
     <div class="flow" data-layout="work-item">
       <picture>
         <source type="image/webp" srcset="/_assets/images/{{ src }}">
-        <img src="/_assets/images/{{ img }}" height="{{ height }}" width="{{ width }}" alt="{{ alt }}">
+        <img loading="lazy" src="/_assets/images/{{ img }}" height="{{ height }}" width="{{ width }}" alt="{{ alt }}">
       </picture>
     {% endif %}
     <p>

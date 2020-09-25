@@ -1,6 +1,6 @@
 ---
 name: Variable Birdsong
-description: A demo of variable font axes being animated by the amplification of a bird song recording.
+description: A demo of variable font axes being animated by the sound of a singing Swedish blackbird.
 src: variable_bird.webp
 img: variable_bird.png
 width: 657
