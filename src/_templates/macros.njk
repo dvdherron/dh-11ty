@@ -1,19 +1,19 @@
 {% macro project(name, description, src, img, width, height, alt, link) %}
-  <h3>
-    {{ name | safe }}</h3>
+
+  <h3 data-layout="work-title">
+    <a href="{{ link }}">{{ name | safe }}</a>
+  </h3>
+
   {% if img %}
-    <picture>
-      <source type="image/webp" srcset="/_assets/images/{{ src }}">
-      <img src="/_assets/images/{{ img }}" height="{{ height }}" width="{{ width }}" alt="{{ alt }}">
-    </picture>
-  {% endif %}
-  <p>
-    {{ description | safe }}
-  </p>
-  {% if link %}
+    <div class="flow" data-layout="work-item">
+      <picture>
+        <source type="image/webp" srcset="/_assets/images/{{ src }}">
+        <img src="/_assets/images/{{ img }}" height="{{ height }}" width="{{ width }}" alt="{{ alt }}">
+      </picture>
+    {% endif %}
     <p>
-      <a href="{{ link }}"> View project </a>
+      {{ description | safe }}
     </p>
-  {% endif %}
+  </div>
 
 {% endmacro %}
